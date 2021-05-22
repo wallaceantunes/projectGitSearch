@@ -1,0 +1,21 @@
+.nav {
+    background-color: #fff;
+    padding: 10px;
+    height: 60px;
+    border: none;
+    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.16);
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.16);
+}
+.nav-col {
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    width: max-content;
+}
+.text-nav {
+    padding-left: 5px;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: bold;
+}
