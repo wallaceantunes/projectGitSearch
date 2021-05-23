@@ -1,19 +1,17 @@
 <template>
   <div>
-    <NavBar />
-    eae vey, blz?
+    <NavBar nomeTela="Lista de Usuários"/>
+    <CardResults />
   </div>
 </template>
 
 <script>
 import NavBar from '@/components/NavBar.vue'
+import CardResults from '@/components/result/CardResults.vue'
 export default {
   components: {
-    NavBar
+    NavBar,
+    CardResults
   }
 }
 </script>
-
-<style>
-
-</style>
