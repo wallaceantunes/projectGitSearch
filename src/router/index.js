@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Search from '@/views/Search.vue'
 import Result from '@/views/Results.vue'
+import Profile from '@/views/Profile.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/painel-busca',
     name: 'Result',
     component: Result
+  },
+  {
+    path: '/perfil',
+    name: 'Profile',
+    component: Profile
   }
 ]
 
