@@ -4,7 +4,6 @@
     margin-right: auto;
     padding: 0 20px;
 }
-
 .row {
     margin-left: -5px;
     margin-right: -5px;
@@ -32,13 +31,7 @@
     *zoom: 1;
     *display: inline;
 }
-.col:first-child {
-    padding-left: 0px;
-}
-.col:last-child {
-    margin-right: 0px;
-    padding-right: 0px;
-}
+
 // xs
 @media only screen and (max-width: 480px) {
     .xs-1 {

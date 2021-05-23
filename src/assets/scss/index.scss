@@ -11,7 +11,6 @@
 }
 body {
     font-family: 'Montserrat';
-    background-color: #F8FAFB;
 }
 .text-left {
     text-align: left;
@@ -25,6 +24,24 @@ body {
 .img-responsive {
     max-width: 100%;
     height: auto;
+}
+.img-circle {
+    border-radius: 50%;
+}
+.input-group {
+    position: relative;
+    width: 100%;
+    .input-style {
+        padding-left: 30px;
+    }
+}
+.input-icon {
+    position: absolute;
+    top: 10px;
+    left: 8px;
+    width: 16px;
+    height: 16px;
+    color: #484848;
 }
 .input-style {
     background-color: #fff;
@@ -57,4 +74,51 @@ body {
 }
 .btn[block] {
     width: 100%;
+}
+.back-page {
+    cursor: pointer;
+    color: #90A4AE !important;
+    margin-right: 11px;
+}
+.bg-white {
+    background-color: #fff;
+}
+// xs
+@media only screen and (max-width: 480px) {
+    * .hidden-xs{
+        display: none !important;
+    }
+}
+
+// sm
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    body {
+        font-family: 'Montserrat';
+        background-color: #F8FAFB;
+    }
+    * .hidden-sm{
+        display: none !important;
+    }
+}
+
+// md
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-family: 'Montserrat';
+        background-color: #F8FAFB;
+    }
+    * .hidden-md{
+        display: none !important;
+    }
+}
+
+// lg
+@media only screen and (min-width: 1025px){
+    body {
+        font-family: 'Montserrat';
+        background-color: #F8FAFB;
+    }
+    * .hidden-lg{
+        display: none !important;
+    }
 }
