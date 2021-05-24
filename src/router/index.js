@@ -18,7 +18,7 @@ const routes = [
     component: Result
   },
   {
-    path: '/perfil',
+    path: '/perfil/:name',
     name: 'Profile',
     component: Profile
   }
