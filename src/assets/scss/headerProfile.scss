@@ -1,0 +1,80 @@
+.header {
+    width: 100%;
+    height: 200px;
+    margin-left: 0px;
+    background-image: url('../../assets/images/coverProfile.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+.img-profile {
+    width: 100px;
+    border: 5px solid #ECEFF1;
+}
+.row-img {
+    position: absolute;
+    z-index: 2;
+    top: 180px;
+    width: 100%;
+    text-align: center;
+    margin-left: -20px;
+}
+.row-info {
+    margin-top: 35px;
+    text-align: center;
+}
+.name-person {
+    font-size: 25px;
+    color: #162668;
+    font-weight: bold;
+}
+.tag-person {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 15px;
+    color: #90A4AE;
+    .tag-name {
+        padding-left: 10px;
+    }
+}
+.info-person {
+    color: #162668;
+    text-align: center;
+    .tag-name {
+        padding-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 769px){
+    .row-img {
+        text-align: left;
+        padding-left: 20px;
+        top: 160px;
+    }
+    .img-profile {
+        width: 150px;
+    }
+    .row-info {
+        margin-left: 190px;
+        margin-top: -60px;
+    }
+    .info-person {
+        color: #162668;
+        text-align: center;
+        .tag-name {
+            padding-left: 10px;
+        }
+    }
+    .tag-person {
+        justify-content: start;
+        padding-left: 46px;
+    }
+    .name-person{
+        text-align: left;
+    }
+    .tag-desc {
+        padding-top: 11px
+    }
+}
