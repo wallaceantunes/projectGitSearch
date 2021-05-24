@@ -13,6 +13,7 @@
             <input
               class="input-style"
               type="text"
+              v-model="searchUser"
               placeholder="Pesquisar..."
             >
           </div>
@@ -22,7 +23,7 @@
             <button @click="goResultPage" class="btn" block>Ver Todos</button>
           </div>
           <div class="col xs-6 sm-6 md-6 lg-6">
-            <button class="btn" block variant="success">Buscar</button>
+            <button @click="goProfile" class="btn" block variant="success">Buscar</button>
           </div>
         </div>
       </div>
@@ -32,14 +33,23 @@
 
 <script>
 export default {
+  data () {
+    return {
+      searchUser: null
+    }
+  },
   methods: {
     goResultPage () {
+      this.$store.commit('user/setInputSearch', this.searchUser)
       this.$router.push({ name: 'Result' })
+    },
+    goProfile () {
+      this.$router.push({ name: 'Profile', params: { name: this.searchUser } })
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/search.scss'
+@import '@/assets/scss/search.scss';
 </style>

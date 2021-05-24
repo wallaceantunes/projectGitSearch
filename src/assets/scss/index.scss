@@ -83,6 +83,31 @@ body {
 .bg-white {
     background-color: #fff;
 }
+.blockPage {
+    z-index: 1051 !important;
+    position: fixed; /* Sit on top of the page content */
+    display: block; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    margin: auto;
+    .loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border: 5px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 5px solid $primary;
+        width: 50px;
+        height: 50px;
+        -webkit-animation: spin 2s linear infinite; /* Safari */
+        animation: spin 2s linear infinite;
+      }
+}
 // xs
 @media only screen and (max-width: 480px) {
     * .hidden-xs{
@@ -121,4 +146,15 @@ body {
     * .hidden-lg{
         display: none !important;
     }
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
