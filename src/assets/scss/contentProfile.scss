@@ -58,7 +58,7 @@
             padding-top: 0px;
         }
         &:last-child {
-            border-bottom: none
+            border-bottom: none;
         }
         .project-title {
             color: #0366D6;
@@ -83,7 +83,6 @@
             .dot {
                 height: 12px;
                 width: 12px;
-                background-color: orange;
                 border-radius: 50%;
                 display: inline-block;
             }

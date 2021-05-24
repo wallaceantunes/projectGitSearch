@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar nomeTela="Lista de Usuários"/>
-    <CardResults />
+    <CardResults/>
   </div>
 </template>
 

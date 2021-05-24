@@ -9,10 +9,12 @@
             </div>
             <div class="col sm-5 offset-lg-1 lg-4 offset-md-1 md-4 text-right">
               <div class="input-group">
-                <vue-feather class="input-icon" type="search" />
+                <vue-feather class="input-icon" type="search"/>
                 <input
                   class="input-style"
                   type="text"
+                  v-model="searchUsers"
+                  @keyup.enter="search(searchUsers)"
                   placeholder="Pesquisar..."
                 >
               </div>
@@ -21,14 +23,17 @@
           <hr class="card-hr hidden-xs">
           <div class="row card-body">
             <div
-              v-for="person in personList"
-              :key="person.id"
+              v-for="user in users"
+              :key="user.id"
               class="col sm-6 md-4 lg-3 card-item"
+              @click="getProfile(user)"
             >
-              <img class="img-responsive img-circle img-size" src="https://via.placeholder.com/75x75" alt="">
-              <span class="card-body-text hidden-sm hidden-md hidden-lg">{{person.nome}}</span>
-              <p class="card-body-text hidden-xs">{{person.nome}}</p>
+              <img class="img-responsive img-circle img-size" :src="user.avatar_url" alt="">
+              <span class="card-body-text hidden-sm hidden-md hidden-lg">{{user.login}}</span>
+              <p class="card-body-text hidden-xs">{{user.login}}</p>
             </div>
+            <Observer @intersect="intersect"/>
+            <div v-if="users.length > 0 && noMoreUser" class="col text-center">Não existem mais usuários.</div>
           </div>
         </div>
       </div>
@@ -37,48 +42,44 @@
 </template>
 
 <script>
+import Observer from '@/components/utils/observer.vue'
+import { createNamespacedHelpers } from 'vuex'
+const userModuleHelper = createNamespacedHelpers('user')
 export default {
+  components: {
+    Observer
+  },
   data () {
     return {
-      personList: [
-        {
-          id: 1,
-          nome: 'Wallace Antunes'
-        },
-        {
-          id: 2,
-          nome: 'Willyan Antunes'
-        },
-        {
-          id: 3,
-          nome: 'Gabriel Antunes'
-        },
-        {
-          id: 4,
-          nome: 'Arthur Antunes'
-        },
-        {
-          id: 5,
-          nome: 'Wallace Antunes'
-        },
-        {
-          id: 6,
-          nome: 'Willyan Antunes'
-        },
-        {
-          id: 7,
-          nome: 'Gabriel Antunes'
-        },
-        {
-          id: 8,
-          nome: 'Arthur Antunes'
-        }
-      ]
+      searchUsers: null,
+      page: 0
+    }
+  },
+  computed: {
+    ...userModuleHelper.mapState(['users', 'inputSearch', 'noMoreUser'])
+  },
+  mounted () {
+    if (this.inputSearch) {
+      this.searchUsers = this.inputSearch
+      this.search(this.inputSearch)
+    }
+  },
+  methods: {
+    search (value) {
+      if (value) {
+        this.$store.dispatch('user/searchUsers', { q: value })
+      }
+    },
+    getProfile (user) {
+      this.$router.push({ name: 'Profile', params: { name: user.login } })
+    },
+    intersect () {
+      this.$store.dispatch('user/incrementUsers', { q: this.searchUsers })
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-@import '@/assets/scss/cardResult.scss'
+@import '@/assets/scss/cardResult.scss';
 </style>
