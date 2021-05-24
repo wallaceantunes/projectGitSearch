@@ -32,5 +32,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '@/assets/scss/navBar.scss'
+@import '@/assets/scss/navBar.scss';
 </style>
