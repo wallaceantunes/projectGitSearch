@@ -1,4 +1,4 @@
-# Desafio Atlas 
+# GitSearch
 [http://atlas-test-wallace.s3-website-us-east-1.amazonaws.com](http://atlas-test-wallace.s3-website-us-east-1.amazonaws.com)
 ### Wallace Antunes
  - Desenvolva uma aplicação que consuma dados da API do Github e que contenha as seguintes funcionalidades:
